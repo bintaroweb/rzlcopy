@@ -24,8 +24,8 @@ class MachineController extends Controller
             ->where('machines.customer_id', '=', $customer->id)
             ->where('machines.deleted_at', '=', null)
             ->select('products.name as name', 'machines.id as id')
-            ->get();  
-        
+            ->get();   
+        //Product
         // dd($machines);
 
         return view('machine.index', ['customer' => $customer, 'machines' => $machines]);
